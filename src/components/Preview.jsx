@@ -22,11 +22,11 @@ function Preview({ userInput, isResumeAdded, resumeId, setuserInput }) {
     const imgData = canvas.toDataURL("image/png") //convert canvas into image url
 
     //pdf
-    const pdf = new jsPDF("p","mm","a4") // portrait millimeter a4 size 
+    const pdf = new jsPDF("p","mm","a4") // portrait millimeter a4size 
     const pdfWidth = pdf.internal.pageSize.getWidth()
     const pdfHeight = (canvas.height*pdfWidth)/canvas.width
-    pdf.addImage(imgData,"png",0,0,pdfWidth,pdfHeight)
-    pdf.save("resume.pdf")
+    pdf.addImage(imgData,"png",0,0,pdfWidth,pdfHeight) // data is added to url imgData x,y=0
+    pdf.save("resume.pdf") //image is saved as pdf named as resume.pdf
   }
 
   return (

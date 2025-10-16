@@ -23,7 +23,7 @@ const style = {
     maxHeight: "90vh"
 };
 
-function Edit({ resumeId }) {
+function Edit({ resumeId, setuserInput }) {
 
     const [editUserInput, setEditUserInput] = useState({
         profesionalData: {
@@ -74,27 +74,33 @@ function Edit({ resumeId }) {
     }
 
     const updateResume = async () => {
+
         try {
             const result = await updateAResumeAPI(resumeId, editUserInput)
             console.log(result);
+            setuserInput(result.data); 
+
             if (result.status == 200) {
                 Swal.fire({
                     title: `Success`,
                     text: `Resume updated successfully`,
                     icon: `success`,
                     confirmButtonText: `Black`
-                })
+                });
+
+                handleClose();
             } else {
                 Swal.fire({
-                    title: "Error",
+                    title: `Error`,
                     text: ` Error updating Resume`,
                     icon: `error`,
                     confirmButtonText: `Black`
                 })
             }
         } catch (err) {
+            console.error(err);
             Swal.fire({
-                title: "Error",
+                title: `Error`,
                 text: ` Error updating Resume`,
                 icon: `error`,
                 confirmButtonText: `Black`

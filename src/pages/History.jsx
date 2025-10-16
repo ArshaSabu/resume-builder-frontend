@@ -44,13 +44,13 @@ function History() {
   }
   console.log(userInput);
 
-  const deleteResume = async (id) =>{
-    const result = await deleteResumeAPI(id)
+  const deleteResume = async (id) =>{   // id of deleted resume is passed
+    const result = await deleteResumeAPI(id) 
     console.log(result);
-    getAllResume()
+    getAllResume() // called to get all resumes after deleting one
   }
 
-  useEffect(() => {  // getAllResume is called as callback using useeffect
+  useEffect(() => {  // getAllResume is called as callback using useeffect (data get when page is loaded)
     getAllResume()
   }, [])
 
