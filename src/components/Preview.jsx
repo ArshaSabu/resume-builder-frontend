@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import Divider from '@mui/material/Divider';
 import Button from '@mui/material/Button';
 import Edit from './Edit';
-import History from '../Pages/History';
+import History from '../pages/History';
 import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas'
 
