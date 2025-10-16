@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import LandingPage from './pages/LandingPage';
 import Form from './pages/Form';
-import History from './Pages/History';
+import History from `./pages/History`;
 import pageNotFound from './pages/pageNotFound';
 import ResumeGenerator from './pages/ResumeGenerator';
 
